@@ -60,8 +60,11 @@ const App = () => {
       <Card className="w-full max-w-xl mx-auto bg-slate-50 bg-opacity-70">
         <CardHeader>
           <CardTitle className="text-4xl text-red-600 font-bold text-center">
-            🎅 Secret Santa 28/12 🤶 <br />
-            chez Tom&Georgie
+            🎅 Secret Santa 🤶
+            <br />
+            28/12
+            <br />
+            chez Tom & Georgie
           </CardTitle>
           <CardDescription className="text-center">
             Découvre à qui tu dois offrir un cadeau ! 🎁 <br />
