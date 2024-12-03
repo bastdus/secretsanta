@@ -3,7 +3,7 @@ import fs from "fs";
 // ==========================
 // DATA
 // ==========================
-const people = [
+const participants = [
   "Thomas.T",
   "Georgina",
   "Fanny",
@@ -44,12 +44,12 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
-const createPairs = (people) => {
-  const shuffled = shuffleArray(people);
+const createPairs = (participantsList) => {
+  const shuffled = shuffleArray(participantsList);
 
   // Ensure no one is assigned to themselves
   for (let i = 0; i < shuffled.length; i++) {
-    if (shuffled[i] === people[i]) {
+    if (shuffled[i] === participantsList[i]) {
       // Swap with the next person, or the first person if it's the last element
       const swapIndex = i === shuffled.length - 1 ? 0 : i + 1;
       [shuffled[i], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[i]];
@@ -57,7 +57,7 @@ const createPairs = (people) => {
   }
 
   // Create the Secret Santa pairs
-  const pairs = people.map((person, index) => ({
+  const pairs = participantsList.map((person, index) => ({
     giver: person,
     receiver: shuffled[index],
   }));
@@ -91,13 +91,13 @@ const deobfuscateString = (encodedStr) => {
 // INIT FUNCTION
 // ==========================
 const init = () => {
-  if (!passwordList.length >= people.length) {
+  if (!passwordList.length >= participants.length) {
     throw new Error(
       `Not enough passwords in the list to assign to each person.`
     );
   }
 
-  const pairs = createPairs(people);
+  const pairs = createPairs(participants);
   const shuffledPasswords = shuffleArray(passwordList);
 
   const friends = pairs.map(({ giver, receiver }, index) => {

@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { Gift, Snowflake } from "lucide-react";
+import { Gift } from "lucide-react";
 import Snowfall from "react-snowfall";
 import {
   Card,
@@ -60,11 +60,12 @@ const App = () => {
       <Card className="w-full max-w-xl mx-auto bg-slate-50 bg-opacity-70">
         <CardHeader>
           <CardTitle className="text-4xl text-red-600 font-bold text-center">
-            🎅 Secret Santa 🎅 <br />
+            🎅 Secret Santa 28/12 🤶 <br />
             chez Tom&Georgie
           </CardTitle>
           <CardDescription className="text-center">
-            Découvre à qui tu dois offrir un cadeau ! 🎁 (max 20€)
+            Découvre à qui tu dois offrir un cadeau ! 🎁 <br />
+            (max 20€)
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -79,10 +80,12 @@ const App = () => {
         </CardContent>
 
         <Dialog open={!!selectedFriend} onOpenChange={handleCloseModal}>
-          <DialogContent className="max-w-[95%] rounded-lg">
+          <DialogContent className="w-1/3 max-w-[95%] rounded-lg">
             <DialogHeader>
               <DialogTitle>
-                {isCorrect ? "Ton ami secret est..." : "Entre le mot de passe"}
+                {isCorrect
+                  ? "Tu dois offrir un cadeau à..."
+                  : "Entre le mot de passe"}
               </DialogTitle>
             </DialogHeader>
             {!isCorrect ? (
@@ -98,11 +101,11 @@ const App = () => {
                 </DialogFooter>
               </>
             ) : (
-              <div className="flex flex-col items-center justify-center mt-4">
-                <Snowflake className="text-blue-500 w-16 h-16 animate-spin-slow" />
-                <p className="text-3xl font-bold text-green-600 mt-4">
-                  {selectedFriend?.secretFriend}
+              <div className="flex flex-col items-center justify-center mt-4 gap-2">
+                <p className="text-3xl font-bold text-green-500">
+                  {selectedFriend?.secretFriend} !
                 </p>
+                <span className="text-3xl">🎅 🎁 🤶</span>
               </div>
             )}
           </DialogContent>
