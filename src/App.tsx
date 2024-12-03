@@ -49,8 +49,6 @@ const App = () => {
   };
 
   const handleCheckPassword = () => {
-    console.log(selectedFriend);
-    console.log(password);
     if (selectedFriend && password === selectedFriend.password) {
       setIsCorrect(true);
     }

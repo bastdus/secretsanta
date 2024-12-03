@@ -4,13 +4,13 @@ import fs from "fs";
 // DATA
 // ==========================
 const people = [
-  "Bastien",
-  "Fanny",
   "Thomas.T",
   "Georgina",
-  "Thomas.D",
+  "Fanny",
   "Gael",
   "Natacha",
+  "Thomas.D",
+  "Bastien",
 ];
 
 // ==========================
@@ -21,20 +21,15 @@ const passwordList = [
   "cadeaux",
   "sapin",
   "guirlande",
-  "fete",
   "hiver",
-  "froid",
   "neige",
   "traineau",
   "snow",
   "christmas",
   "gift",
   "winter",
-  "cold",
   "snowman",
-  "joy",
   "santa",
-  "claus",
 ];
 
 // ==========================
