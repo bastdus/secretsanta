@@ -8,6 +8,7 @@ const participants = ["Tom", "Georgina", "Fanny", "Gael", "Natacha", "Bastien"];
 // ==========================
 // PASSWORD LIST
 // ==========================
+// it's better to have more word on this list than participants to avoid participant to have the same password
 const passwordList = [
   "noel",
   "cadeaux",
