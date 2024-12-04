@@ -82,7 +82,7 @@ If you prefer to run the shuffle on the live website, here’s how to do it:
 
 The page is hosted on your github pages and is automatically deployed with github actions. You can access the page here: 
 
-*https://<your-github-account>/secret-santa/*
+*https://your-github-account/secret-santa/*
 
 Everytime you push to the `main` branch the page will be automatically deployed.
 
