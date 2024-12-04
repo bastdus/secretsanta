@@ -80,7 +80,10 @@ If you prefer to run the shuffle on the live website, here’s how to do it:
 
 ### 3. Deploy
 
-The page is hosted on your github pages and is automatically deployed with github actions. You can access the page here: *https://<your-github-account>/secret-santa/*
+The page is hosted on your github pages and is automatically deployed with github actions. You can access the page here: 
+
+*https://<your-github-account>/secret-santa/*
+
 Everytime you push to the `main` branch the page will be automatically deployed.
 
 :warning: **Important Note**: Everytime you add a participant, you need to run the script Shuffle locally OR via the workflow in order to integrate the new one.
