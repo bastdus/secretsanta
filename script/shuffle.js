@@ -3,15 +3,7 @@ import fs from "fs";
 // ==========================
 // DATA
 // ==========================
-const participants = [
-  "Thomas.T",
-  "Georgina",
-  "Fanny",
-  "Gael",
-  "Natacha",
-  "Thomas.D",
-  "Bastien",
-];
+const participants = ["Tom", "Georgina", "Fanny", "Gael", "Natacha", "Bastien"];
 
 // ==========================
 // PASSWORD LIST
@@ -44,22 +36,23 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
+const shiftArray = (array) => {
+  const copyArray = [...array];
+  const lastElement = copyArray.pop();
+  copyArray.unshift(lastElement);
+  return copyArray;
+};
+
 const createPairs = (participantsList) => {
-  const shuffled = shuffleArray(participantsList);
+  // create a copy shuffled from the participants array
+  const shuffledArray = shuffleArray(participantsList);
+  // create a copy of the shuffled array and put the last element at the beginning
+  const shiftedArray = shiftArray(shuffledArray);
 
-  // Ensure no one is assigned to themselves
-  for (let i = 0; i < shuffled.length; i++) {
-    if (shuffled[i] === participantsList[i]) {
-      // Swap with the next person, or the first person if it's the last element
-      const swapIndex = i === shuffled.length - 1 ? 0 : i + 1;
-      [shuffled[i], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[i]];
-    }
-  }
-
-  // Create the Secret Santa pairs
-  const pairs = participantsList.map((person, index) => ({
+  // Create pairs of giver and receiver by mapping the shuffled array with the shifted array participantsList
+  const pairs = shuffledArray.map((person, index) => ({
     giver: person,
-    receiver: shuffled[index],
+    receiver: shiftedArray[index],
   }));
 
   return pairs;
